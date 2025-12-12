@@ -7,28 +7,28 @@ const CoffeeLanding = () => {
       id: 1,
       name: 'Caramel Macchiato',
       price: '$5.50',
-      image: 'https://images.unsplash.com/photo-1511920170033-f8396924c348?w=400',
+      image: '/src/assets/caramel-macchiato.webp',
       alt: 'Layered caramel macchiato in a glass',
     },
     {
       id: 2,
-      name: 'Classic Cold Brew',
+      name: 'Iced Americano',
       price: '$4.75',
-      image: 'https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?w=400',
+      image: '/src/assets/iced-americano.jpg',
       alt: 'Cold brew coffee in a glass',
     },
     {
       id: 3,
       name: 'Perfect Espresso',
       price: '$3.50',
-      image: 'https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=400',
+      image: '/src/assets/perfect-espresso.png',
       alt: 'Espresso in a white cup',
     },
     {
       id: 4,
       name: 'Mocha Frappé',
       price: '$6.00',
-      image: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400',
+      image: '/src/assets/mocha-frappe.jpg',
       alt: 'Mocha frappé with whipped cream',
     },
   ];
@@ -36,7 +36,7 @@ const CoffeeLanding = () => {
   return (
     <div className="min-h-screen  max-w-7xl bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Hero Section */}
-      <div className="relative h-[400px] rounded-3xl mx-4 md:mx-8 lg:mx-16 mt-8 overflow-hidden shadow-2xl">
+      <div className="relative h-[500px] rounded-3xl mx-4 md:mx-8 lg:mx-16 mt-8 overflow-hidden shadow-2xl">
         {/* Background Image with Overlay */}
         <div
           className="absolute inset-0 bg-cover bg-center"
