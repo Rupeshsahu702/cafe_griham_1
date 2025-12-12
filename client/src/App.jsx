@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import Menu from './pages/Menu';
 import Cart from './pages/Cart';
 import MyOrders from './pages/MyOrder';
+import Contact from './pages/Contact';
 
 function App() {
  
@@ -20,6 +21,7 @@ function App() {
         <Route path='/menu' element={<Menu/>} />
         <Route path='/cart' element={<Cart/>} />
         <Route path='/order' element={<MyOrders/>} />
+        <Route path='/contact' element={<Contact/>} />
       </Routes>
       <Footer/>
     </>

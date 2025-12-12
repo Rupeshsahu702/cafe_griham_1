@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const CoffeeLanding = () => {
   const featuredCoffees = [
@@ -67,12 +68,14 @@ const CoffeeLanding = () => {
             >
               Order Coffee Online
             </Button>
+            <Link to='/menu' >
             <Button
               variant="secondary"
               className="bg-white hover:bg-gray-100 text-gray-900 font-semibold px-8 py-6 text-base rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
             >
               View Menu
             </Button>
+            </Link>
           </div>
         </div>
       </div>

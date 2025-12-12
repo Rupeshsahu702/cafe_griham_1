@@ -1,50 +1,17 @@
 import React, { useState } from 'react';
 import { FileText } from 'lucide-react';
+import { useOrders } from '../context/OrderContext';
+import { useNavigate } from 'react-router-dom';
 
-const MyOrders = () => {
+const MyOrder = () => {
   const [activeTab, setActiveTab] = useState('All');
+  const { orders, getOrdersByStatus } = useOrders();
+  const navigate = useNavigate();
 
   const tabs = ['All', 'Preparing', 'Served', 'Completed', 'Cancelled'];
 
-  const orders = [
-    {
-      id: '#BH12034',
-      dateTime: 'Oct 26, 2023, 10:15 AM',
-      items: '2x Latte, 1x Cold Brew',
-      service: 'Table 5',
-      total: '$14.50',
-      status: 'Preparing'
-    },
-    {
-      id: '#BH12032',
-      dateTime: 'Oct 25, 2023, 4:30 PM',
-      items: '1x Cappuccino',
-      service: 'Takeaway',
-      total: '$4.75',
-      status: 'Served'
-    },
-    {
-      id: '#BH12029',
-      dateTime: 'Oct 24, 2023, 11:02 AM',
-      items: '1x Espresso, 1x Croissant',
-      service: 'Table 2',
-      total: '$7.25',
-      status: 'Completed'
-    },
-    {
-      id: '#BH12025',
-      dateTime: 'Oct 23, 2023, 09:30 AM',
-      items: '1x Americano',
-      service: 'Takeaway',
-      total: '$3.50',
-      status: 'Cancelled'
-    }
-  ];
-
   // Filter orders based on active tab
-  const filteredOrders = activeTab === 'All' 
-    ? orders 
-    : orders.filter(order => order.status === activeTab);
+  const filteredOrders = getOrdersByStatus(activeTab);
 
   // Status badge styling
   const getStatusStyle = (status) => {
@@ -124,7 +91,7 @@ const MyOrders = () => {
                       } hover:bg-white/40 transition-colors`}
                     >
                       <td className="py-4 px-6 text-sm text-[#6B5B54] font-medium">
-                        {order.id}
+                        #{order.orderNumber}
                       </td>
                       <td className="py-4 px-6 text-sm text-[#6B5B54]">
                         {order.dateTime}
@@ -176,7 +143,10 @@ const MyOrders = () => {
               </p>
 
               {/* Button */}
-              <button className="px-8 py-3 bg-[#D4A574] text-white rounded-full font-semibold hover:bg-[#C19A6B] transition-colors">
+              <button 
+                onClick={() => navigate('/menu')}
+                className="px-8 py-3 bg-[#D4A574] text-white rounded-full font-semibold hover:bg-[#C19A6B] transition-colors"
+              >
                 View Menu
               </button>
             </div>
@@ -187,4 +157,4 @@ const MyOrders = () => {
   );
 };
 
-export default MyOrders;
+export default MyOrder;
